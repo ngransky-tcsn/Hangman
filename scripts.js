@@ -1,18 +1,44 @@
 const partialP = document.getElementById('partial');
 const guessInput = document.getElementById('guess');
-const guessBox = document.getElementById('guesses');
+const guessesBox = document.getElementById('guessed');
 
 const word = "javascript";
 let partial = [];
 let guessed = [];
 let attempts = 0;
 
-for (let i = 0; i < word.length; i ++) {
-	partial.push('_'); 
+for (let i = 0; i < word.length; i++) {
+	partial.push('_');
+}
+
+function update() {
+	partialP.innerText = '';
+	guessesBox.innerText = '';
+	for (letter in partial) {
+		partialP.innerHTML += partial[letter] + '&nbsp;';
+	}
+	for (g in guessed) {
+		guessesBox.innerHTML += guessed[g] + '&nbsp;';
+	} 
 }
 
 function check(guess) {
-	console.log(guess);
+	if (guessed.includes(guess)) {
+		console.log("You already guessed that letter!");
+	} else {
+		guessed.push(guess);
+
+		if (word.includes(guess)) {
+			for (let i = 0; i < word.length; i++) {
+				if (word[i] == guess) {
+					partial[i] = word[i];
+				}
+			}
+		} else {
+			attempts++;
+		}
+		update();
+	}
 }
 
 guessInput.addEventListener('input', event => {
