@@ -20,6 +20,14 @@ function update() {
 	for (g in guessed) {
 		guessesBox.innerHTML += guessed[g] + '&nbsp;';
 	} 
+	if (attempts == 6) {
+		console.log('Game over!');
+		guessInput.disabled = true;
+	}
+	if (!partial.includes('_')) {
+		console.log('You win!');
+		guessInput.disabled = true;
+	}
 }
 
 function check(guess) {
