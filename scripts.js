@@ -4,7 +4,8 @@ const guessesBox = document.getElementById('guessed');
 const message = document.getElementById('message');
 
 //Initialize variables
-const word = "javascript";
+const wordList = ["javascript", "python", "java", "html", "css", "typescriptt", "node"];
+const word = wordList[Math.floor(Math.random() * wordList.length)];
 let partial = [];
 let guessed = [];
 let attempts = 6;
