@@ -9,14 +9,17 @@
 
 	<body>
 		<h1>Hangman</h1>
-		<p><span id="attempts">6</span> Attempts left</p>
+		<img src="Images/gallows.png" alt="gallows" id="gallows">
 		<p id="partial"></p>
+		<p><span id="attempts">6</span> Attempts left</p>
 		<input type="text" id="guess" placeholder="Guess a letter">
-	<label>
-		Guessed
-		<p id="guessed"></p>
-	</label>
+		<label id="guessesBox">
+			Guessed
+			<p id="guessed"></p>
+		</label>
+		
 		<p id="message"></p>
+		
 		<script src="scripts.js"></script>
 	</body>
 </html>

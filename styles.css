@@ -9,7 +9,7 @@ font-family: 'Roboto Slab', serif;
 	font-size: 2rem;
 }
 
-#guessed {
+#guessedBox {
 	border: 1px dashed white;
 	display: block;
 	width: 25%;
@@ -20,4 +20,9 @@ input {
 	text-align: center;
 	font-size: 1rem;
 	font-family: 'Roboto Slab', serif;
+}
+
+#gallows {
+	width: 25%;
+	min-width: 250px;
 }

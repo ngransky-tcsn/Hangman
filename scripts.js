@@ -60,6 +60,7 @@ function check(guess) {
 			}
 		} else {
 			attempts--;
+			document.getElementById('gallows').src = `Images/${6 - attempts}.png`;
 		}
 		update();
 	}
