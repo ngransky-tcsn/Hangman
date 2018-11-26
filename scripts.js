@@ -7,7 +7,7 @@ const message = document.getElementById('message');
 const word = "javascript";
 let partial = [];
 let guessed = [];
-let attempts = 0;
+let attempts = 6;
 
 // Create underscores for word in partial
 for (let i = 0; i < word.length; i++) {
@@ -20,6 +20,8 @@ function update() {
 	guessesBox.innerText = '';
 	message.innerText = '';
 
+	document.getElementById('attempts').innerText = attempts;
+
 	// Update partial word and guessed list
 	for (letter in partial) {
 		partialP.innerHTML += partial[letter] + '&nbsp;';
@@ -29,7 +31,7 @@ function update() {
 	} 
 
 	// Check if out of attempts
-	if (attempts == 6) {
+	if (attempts == 0) {
 		message.innerText = 'Game over!'
 		guessInput.disabled = true;
 	}
@@ -57,7 +59,7 @@ function check(guess) {
 				}
 			}
 		} else {
-			attempts++;
+			attempts--;
 		}
 		update();
 	}
